@@ -60,7 +60,7 @@
 
     <tbody>
         <tr>
-            <th>Image</th>
+            
             <th>Item</th>
             <th>Qty</th>
             <th>Price</th>
@@ -68,7 +68,7 @@
 
         {% for food in ordered_food_to_vendor %}
         <tr>
-            <td><img src="http://{{domain}}{{ food.fooditem.images.url }}" alt="Food Image" width="60"></td>
+           
             <td><p style="margin: 0;">{{ food.fooditem }}</p>
             <small><a href="http://{{ domain }}{% url 'vendor_detail' food.fooditem.vendor.vendor_slug %}" style="color:#ccc;">{{ food.fooditem.vendor.vendor_name }}</a></small>
             </td>

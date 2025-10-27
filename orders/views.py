@@ -7,7 +7,7 @@ from menu.models import FoodItem
 from .forms import OrderForm
 from .models import Order, OrderedFood, Payment
 import simplejson as json
-from .utils import generate_order_number
+from .utils import generate_order_number, order_total_by_vendor
 from accounts.utils import send_notification
 from django.contrib.auth.decorators import login_required
 
@@ -175,10 +175,10 @@ def payments(request):
                 context = {
                     'order': order,
                     'to_email': i.fooditem.vendor.user.email,
-                    #'ordered_food_to_vendor': ordered_food_to_vendor,
-                    #'vendor_subtotal': order_total_by_vendor(order, i.fooditem.vendor.id)['subtotal'],
-                    #'tax_data': order_total_by_vendor(order, i.fooditem.vendor.id)['tax_dict'],
-                    #'vendor_grand_total': order_total_by_vendor(order, i.fooditem.vendor.id)['grand_total'],
+                    'ordered_food_to_vendor': ordered_food_to_vendor,
+                    'vendor_subtotal': order_total_by_vendor(order, i.fooditem.vendor.id)['subtotal'],
+                    'tax_data': order_total_by_vendor(order, i.fooditem.vendor.id)['tax_dict'],
+                    'vendor_grand_total': order_total_by_vendor(order, i.fooditem.vendor.id)['grand_total'],
                     
                 }
                 send_notification(mail_subject, mail_template, context)

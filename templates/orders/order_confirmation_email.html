@@ -13,7 +13,7 @@
       }  
       .activate-btn{
         font: inherit;
-        background-color: #C33332;
+        background-color: #2b8097;
         border: none;
         padding: 10px;
         text-transform: uppercase;
@@ -30,7 +30,7 @@
   <table role="presentation" width="100%">
     <tr>
     <td  align="center" style="color: white;">
-     <img alt="Logo" src="https://rathank.com/foodonline/logo/logo.png" width="400px" align="middle">
+     
       </td>
   </table>
 
@@ -60,7 +60,7 @@
 
     <tbody>
         <tr>
-            <th>Image</th>
+            
             <th>Food Item</th>
             <th>Qty</th>
             <th>Price</th>
@@ -68,7 +68,7 @@
 
         {% for food in ordered_food %}
         <tr>
-            <td><img src="http://{{domain}}{{ food.fooditem.image.url }}" alt="Food Image" width="60"></td>
+            
             <td><p style="margin: 0;">{{ food.fooditem }}</p>
             <small><a href="http://{{ domain }}{% url 'vendor_detail' food.fooditem.vendor.vendor_slug %}" style="color:#ccc;">{{ food.fooditem.vendor.vendor_name }}</a></small>
             </td>
@@ -98,10 +98,10 @@
     </tbody>
   </table>
 
-  <table role="presentation" bgcolor="#C33332" width="100%">
+  <table role="presentation" bgcolor="##2b8097" width="100%">
       <tr>
         <td align="center" style="padding: 15px 15px; color: #fff;">
-          <p>© {% now "Y" %} FoodOnline Marketplace, All Rights Reserved.</p>
+          <p>© {% now "Y" %} ClothesExch Marketplace, All Rights Reserved.</p>
           <a href="http://{{domain}}" style="color:#fff;">Visit Website</a>      
         </td>
       </tr>
